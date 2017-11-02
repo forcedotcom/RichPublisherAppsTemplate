@@ -1,0 +1,16 @@
+<!-- This component will be used to render Rich Publisher App in publiser and in feed.
+     When it is rendered in publisher as a preview, v.variant's value is set to PREVIEW
+     and when it is rendered in feed, v.variant's value is set to FEED -->
+
+<!-- Read more about 'lightning:availableForChatterExtensionRenderer' interface at https://goo.gl/pQfgwE -->
+<aura:component implements="lightning:availableForChatterExtensionRenderer">
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <!-- 'renderThis' is typically initialized in the controller's init function -->
+    <aura:attribute name="renderThis" type="Object" description="Data that needs to be rendered"/>
+    
+    <div class="container">
+        <!-- render data in 'renderThis' attribute -->
+    </div>
+
+</aura:component>

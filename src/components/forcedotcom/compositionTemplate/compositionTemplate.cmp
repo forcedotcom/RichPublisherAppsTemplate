@@ -1,0 +1,21 @@
+<!-- This component will be used in composition modal when a user is trying to use Rich Publisher App -->
+
+<!-- Read more about 'lightning:availableForChatterExtensionComposer' interface at https://goo.gl/Q1D5QE -->
+<aura:component implements="lightning:availableForChatterExtensionComposer">
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+
+    <!-- 'selectionItems' are typically initialized in the controller's init function -->
+    <aura:attribute name="selectionItems" type="Object" description="List of options from which user can select one to attach"/>
+    <!-- Save the selected item by the user -->
+    <aura:attribute name="selectedItem" type="Object" description="Currently selected item"/>
+
+    <div class="container">
+        <aura:iteration items="{!v.selectionItems}" var="selectionItem" indexVar="index">
+            <!-- When user clicks on an item, controller action 'selected' will be called -->
+            <div class="itemContainer" onclick="{!c.selected}">
+                <!-- render each option in a list. This list is used by user to select the item
+                     and attach it with the post -->
+            </div>
+        </aura:iteration>
+    </div>
+</aura:component>
